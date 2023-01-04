@@ -1,11 +1,13 @@
 const asyncHandler = require('express-async-handler');
 
 const Giveaway = require('../models/giveawayModel');
+const User = require('../models/userModel');
+
 
 // GET /api/giveaways
 const getGiveaway = asyncHandler(async (req, res) => {
 
-    const giveaways = await Giveaway.find();
+    const giveaways = await Giveaway.find({ user: req.user.id });
 
     res.status(200).json(giveaways);
 });
@@ -27,6 +29,7 @@ const postGiveaway = asyncHandler(async (req, res) => {
         date: req.body.date,
         multiply: req.body.multiply,
         repeat: req.body.repeat,
+        user: req.user.id
     });
 
     res.status(201).json(giveaway);
@@ -39,8 +42,22 @@ const updateGiveaway = asyncHandler(async (req, res) => {
 
     if (!giveaway) {
         res.status(400);
-        throw new Error('Giveaway not found');
+        throw new Error('Giveaway not found.');
     };
+
+    const user = await User.findById(req.user.id);
+
+    // Check for user
+    if (!user) {
+        res.status(401);
+        throw new Error('User not found.');
+    }
+
+    // Logged user matches the giveaway user
+    if (giveaway.user.toString() !== user.id) {
+        res.status(401);
+        throw new Error('User not authorized.')
+    }
 
     const updatedGiveaway = await Giveaway.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
@@ -57,9 +74,23 @@ const deleteGiveaway = asyncHandler(async (req, res) => {
         throw new Error('Giveaway not found');
     };
 
+    const user = await User.findById(req.user.id);
+
+    // Check for user
+    if (!user) {
+        res.status(401);
+        throw new Error('User not found.');
+    }
+
+    // Logged user matches the giveaway user
+    if (giveaway.user.toString() !== user.id) {
+        res.status(401);
+        throw new Error('User not authorized.')
+    }
+
     await giveaway.remove();
 
-    res.status(200).json({message: `${req.params.id} deleted`});
+    res.status(200).json({ message: `${req.params.id} deleted` });
 });
 
 module.exports = {

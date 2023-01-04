@@ -7,10 +7,12 @@ const {
     deleteGiveaway
 } = require('../controllers/giveawayController');
 
+const { protect } = require('../middleware/authMiddleware');
+
 // GET & POST
-router.route('/').get(getGiveaway).post(postGiveaway);
+router.route('/').get(protect, getGiveaway).post(protect, postGiveaway);
 
 // PUT & DELETE
-router.route('/:id').put(updateGiveaway).delete(deleteGiveaway);
+router.route('/:id').put(protect, updateGiveaway).delete(protect, deleteGiveaway);
 
 module.exports = router;
