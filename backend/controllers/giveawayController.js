@@ -45,16 +45,14 @@ const updateGiveaway = asyncHandler(async (req, res) => {
         throw new Error('Giveaway not found.');
     };
 
-    const user = await User.findById(req.user.id);
-
     // Check for user
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found.');
     }
 
     // Logged user matches the giveaway user
-    if (giveaway.user.toString() !== user.id) {
+    if (giveaway.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('User not authorized.')
     }
@@ -74,16 +72,14 @@ const deleteGiveaway = asyncHandler(async (req, res) => {
         throw new Error('Giveaway not found');
     };
 
-    const user = await User.findById(req.user.id);
-
     // Check for user
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found.');
     }
 
     // Logged user matches the giveaway user
-    if (giveaway.user.toString() !== user.id) {
+    if (giveaway.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('User not authorized.')
     }

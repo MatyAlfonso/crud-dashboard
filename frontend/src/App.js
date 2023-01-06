@@ -1,8 +1,22 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+import { Dashboard } from './pages/Dashboard';
+import { Login } from './pages/Login';
+
+
 function App() {
   return (
-    <div>
-      <h1 className='text-6xl text-red-600'>My app</h1>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/login' element={<Login />}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
