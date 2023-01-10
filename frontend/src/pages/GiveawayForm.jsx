@@ -58,10 +58,11 @@ export const GiveawayForm = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className='bg-green-400'
+            className='flex flex-col w-2/4 m-auto justify-center items-center h-screen'
         >
-            <label>Title:</label>
+            <label className='text-white text-2xl m-2'>Title:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="text"
                 name="title"
                 value={giveawayData?.title}
@@ -70,8 +71,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Image:</label>
+            <label className='text-white text-2xl m-2'>Image:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="text"
                 name="image"
                 value={giveawayData?.image}
@@ -80,8 +82,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Description:</label>
+            <label className='text-white text-2xl m-2'>Description:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="text"
                 name="description"
                 value={giveawayData?.description}
@@ -90,8 +93,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Price:</label>
+            <label className='text-white text-2xl m-2'>Price:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="number"
                 name="price"
                 value={giveawayData?.price}
@@ -100,8 +104,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Region:</label>
+            <label className='text-white text-2xl m-2'>Region:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="text"
                 name="region"
                 value={giveawayData?.region}
@@ -110,8 +115,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Field:</label>
+            <label className='text-white text-2xl m-2'>Field:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="text"
                 name="field"
                 value={giveawayData?.field}
@@ -120,8 +126,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Date:</label>
+            <label className='text-white text-2xl m-2'>Date:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="date"
                 name="date"
                 value={giveawayData?.date}
@@ -130,8 +137,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Multiply:</label>
+            <label className='text-white text-2xl m-2'>Multiply:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="number"
                 name="multiply"
                 value={giveawayData?.multiply}
@@ -140,8 +148,9 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <label>Repeat:</label>
+            <label className='text-white text-2xl m-2'>Repeat:</label>
             <input
+                className='rounded-2xl p-2 text-xl text-black'
                 type="number"
                 name="repeat"
                 value={giveawayData?.repeat}
@@ -150,7 +159,7 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <button type='submit'>Submit</button>
+            <button type='submit' className='bg-teal p-6 text-2xl rounded-2xl font-bold'>Submit</button>
         </form>
     )
 }

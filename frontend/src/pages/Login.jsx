@@ -48,11 +48,17 @@ export const Login = () => {
     <>
       {
         isLoading
-          ? <Spinner />
-          : <form onSubmit={handleSubmit}>
-            <label>
+          ?
+          <div className='flex items-center justify-center h-screen'>
+            <Spinner />
+          </div>
+          :
+          <form className='flex flex-col items-center justify-center h-screen' onSubmit={handleSubmit}>
+            <label className='text-white text-2xl m-2'>
               Email:
+              <br />
               <input
+                className='rounded-2xl p-1 text-black focus:ring focus:ring-teal'
                 type="email"
                 value={email}
                 placeholder='Enter your email'
@@ -62,9 +68,11 @@ export const Login = () => {
 
             <br />
 
-            <label>
+            <label className='text-white text-2xl m-2'>
               Password:
+              <br />
               <input
+                className='rounded-2xl p-1 text-black focus:ring focus:ring-teal'
                 type="password"
                 value={password}
                 placeholder='Enter your password'
@@ -74,7 +82,7 @@ export const Login = () => {
 
             <br />
 
-            <button type="submit">Log in</button>
+            <button className='bg-teal p-6 text-2xl rounded-2xl font-bold' type="submit">Log in</button>
           </form>
       }
     </>

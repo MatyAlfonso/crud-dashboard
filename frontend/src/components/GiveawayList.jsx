@@ -33,16 +33,32 @@ export const GiveawayList = () => {
     };
 
     return (
-        <section>
+        <>
             {giveaways.length > 0 ? (
-                <div>
-                    {
-                        giveaways.map(giveaway => (
-                            <GiveawayItem key={giveaway._id} giveaway={giveaway} />
-                        ))
-                    }
-                </div>
-            ) : (<h3>There is not giveaways yet!</h3>)}
-        </section>
+                <table className='bg-light-black w-11/12 my-10 mx-auto rounded-2xl border-separate border-spacing-1'>
+                    <thead>
+                        <tr>
+                            <th className='text-white p-4'>Created at</th>
+                            <th className='text-white p-4'>Id</th>
+                            <th className='text-white p-4'>Title</th>
+                            <th className='text-white p-4'> Image</th>
+                            <th className='text-white p-4'>Description</th>
+                            <th className='text-white p-4'>Price</th>
+                            <th className='text-white p-4'>Region</th>
+                            <th className='text-white p-4'>Field</th>
+                            <th className='text-white p-4'>Date</th>
+                            <th className='text-white p-4'>Multiply</th>
+                            <th className='text-white p-4'>Repeat</th>
+                        </tr>
+
+                        {
+                            giveaways.map(giveaway => (
+                                <GiveawayItem key={giveaway._id} giveaway={giveaway} />
+                            ))
+                        }
+                    </thead>
+                </table>
+            ) : (<h3 className='text-white text-center p-6 text-2xl'>There is not giveaways yet! Create one.</h3>)}
+        </>
     )
 }

@@ -14,11 +14,14 @@ export const Navbar = () => {
     }
 
     return (
-        <button
-            onClick={handleClick}
-            className='bg-red-600 text-white p-3 m-2'
-        >
-            Logout
-        </button>
+        <nav className='bg-black flex justify-between items-center'>
+            <h1 className='text-white text-6xl font-bold text-center p-6'>My Dashboard</h1>
+            <button
+                onClick={handleClick}
+                className='bg-blue text-white text-xl py-2 px-4 m-4 rounded-2xl font-bold'
+            >
+                Logout
+            </button>
+        </nav>
     )
 }
