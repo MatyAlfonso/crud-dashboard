@@ -86,7 +86,7 @@ const deleteGiveaway = asyncHandler(async (req, res) => {
 
     await giveaway.remove();
 
-    res.status(200).json({ message: `${req.params.id} deleted` });
+    res.status(200).json({ message: `${req.params.id}` });
 });
 
 module.exports = {
