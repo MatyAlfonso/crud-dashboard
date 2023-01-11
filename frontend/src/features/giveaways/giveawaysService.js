@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/giveaways/';
+const API_URL = 'https://crud-dashboard-production.up.railway.app/api/giveaways/';
 
 // Get giveaways 
 const getGiveaways = async (token) => {
