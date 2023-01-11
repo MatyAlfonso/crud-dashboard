@@ -22,14 +22,14 @@ export const GiveawayItem = ({ giveaway }) => {
                 <td className='text-white text-center p-4'>{giveaway.repeat}</td>
                 <td>
                     <Link to={`/editGiveaway/${giveaway._id}`}>
-                        <button className='bg-lilac rounded-2xl p-4 m-2 font-bold'>
+                        <button className='bg-lilac hover:bg-dark-lilac hover:text-white rounded-2xl p-4 m-2 font-bold'>
                             Edit
                         </button>
                     </Link>
                 </td>
                 <td>
                     <button
-                        className='bg-red rounded-2xl p-4 m-2 font-bold'
+                        className='bg-red hover:bg-dark-red hover:text-white rounded-2xl p-4 m-2 font-bold'
                         onClick={() => dispatch(deleteGiveaway(giveaway._id))}
                     >
                         Delete

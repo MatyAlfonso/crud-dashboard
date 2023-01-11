@@ -159,7 +159,7 @@ export const GiveawayForm = () => {
 
             <br />
 
-            <button type='submit' className='bg-teal p-6 text-2xl rounded-2xl font-bold'>Submit</button>
+            <button type='submit' className='bg-teal hover:bg-dark-teal hover:text-white p-6 text-2xl rounded-2xl font-bold'>Submit</button>
         </form>
     )
 }

@@ -58,10 +58,10 @@ export const Login = () => {
               Email:
               <br />
               <input
-                className='rounded-2xl p-1 text-black focus:ring focus:ring-teal'
+                className='rounded-2xl p-2 text-black focus:ring focus:ring-teal'
                 type="email"
                 value={email}
-                placeholder='Enter your email'
+                placeholder='Try admin@admin.com'
                 onChange={event => setFormData({ ...formData, email: event.target.value })}
               />
             </label>
@@ -72,17 +72,17 @@ export const Login = () => {
               Password:
               <br />
               <input
-                className='rounded-2xl p-1 text-black focus:ring focus:ring-teal'
+                className='rounded-2xl p-2 text-black focus:ring focus:ring-teal'
                 type="password"
                 value={password}
-                placeholder='Enter your password'
+                placeholder='Try admin'
                 onChange={event => setFormData({ ...formData, password: event.target.value })}
               />
             </label>
 
             <br />
 
-            <button className='bg-teal p-6 text-2xl rounded-2xl font-bold' type="submit">Log in</button>
+            <button className='bg-teal p-6 text-2xl rounded-2xl font-bold hover:bg-dark-teal hover:text-white' type="submit">Log in</button>
           </form>
       }
     </>
