@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logout, reset } from '../features/auth/authSlice';
 
 export const Navbar = () => {
@@ -16,7 +16,7 @@ export const Navbar = () => {
 
     return (
         <nav className='bg-black flex justify-between items-center'>
-            <h1 className='text-white text-6xl font-bold text-center p-6'>My Dashboard</h1>
+            <Link to='/'><h1 className='text-white text-6xl font-bold text-center p-6'>My Dashboard</h1></Link>
             {
                 user === null
                     ? (<></>)

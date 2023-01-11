@@ -58,8 +58,11 @@ export const GiveawayForm = () => {
     return (
         <form
             onSubmit={handleSubmit}
-            className='flex flex-col w-2/4 m-auto justify-center items-center h-screen'
+            className='flex flex-col w-2/4 m-auto'
         >
+
+            <h2 className='text-4xl text-white text-center font-bold'>{params.id ? 'Edit giveaway' : 'Create giveaway'}</h2>
+
             <label className='text-white text-2xl m-2'>Title:</label>
             <input
                 className='rounded-2xl p-2 text-xl text-black'
@@ -69,7 +72,14 @@ export const GiveawayForm = () => {
                 onChange={handleChange}
             />
 
-            <br />
+            <label className='text-white text-2xl m-2'>Description:</label>
+            <textarea
+                className='rounded-2xl p-2 text-xl text-black'
+                type="text"
+                name="description"
+                value={giveawayData?.description}
+                onChange={handleChange}
+            />
 
             <label className='text-white text-2xl m-2'>Image:</label>
             <input
@@ -80,86 +90,76 @@ export const GiveawayForm = () => {
                 onChange={handleChange}
             />
 
-            <br />
+            <div className='flex flex-wrap my-4 justify-between'>
+                <div className='py-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Price:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="number"
+                        name="price"
+                        value={giveawayData?.price}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label className='text-white text-2xl m-2'>Description:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="text"
-                name="description"
-                value={giveawayData?.description}
-                onChange={handleChange}
-            />
+                <div className='py-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Region:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="text"
+                        name="region"
+                        value={giveawayData?.region}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <br />
+                <div className='py-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Field:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="text"
+                        name="field"
+                        value={giveawayData?.field}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label className='text-white text-2xl m-2'>Price:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="number"
-                name="price"
-                value={giveawayData?.price}
-                onChange={handleChange}
-            />
+                <div className='py-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Date:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="date"
+                        name="date"
+                        value={giveawayData?.date}
+                        onChange={handleChange}
+                    />
+                </div>
+            </div>
+            <div className='flex justify-between'>
+                <div className='my-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Multiply:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="number"
+                        name="multiply"
+                        value={giveawayData?.multiply}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <br />
+                <div className='my-4 flex flex-col'>
+                    <label className='text-white text-2xl m-2'>Repeat:</label>
+                    <input
+                        className='rounded-2xl p-2 text-xl text-black'
+                        type="number"
+                        name="repeat"
+                        value={giveawayData?.repeat}
+                        onChange={handleChange}
+                    />
+                </div>
+            </div>
 
-            <label className='text-white text-2xl m-2'>Region:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="text"
-                name="region"
-                value={giveawayData?.region}
-                onChange={handleChange}
-            />
-
-            <br />
-
-            <label className='text-white text-2xl m-2'>Field:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="text"
-                name="field"
-                value={giveawayData?.field}
-                onChange={handleChange}
-            />
-
-            <br />
-
-            <label className='text-white text-2xl m-2'>Date:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="date"
-                name="date"
-                value={giveawayData?.date}
-                onChange={handleChange}
-            />
-
-            <br />
-
-            <label className='text-white text-2xl m-2'>Multiply:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="number"
-                name="multiply"
-                value={giveawayData?.multiply}
-                onChange={handleChange}
-            />
-
-            <br />
-
-            <label className='text-white text-2xl m-2'>Repeat:</label>
-            <input
-                className='rounded-2xl p-2 text-xl text-black'
-                type="number"
-                name="repeat"
-                value={giveawayData?.repeat}
-                onChange={handleChange}
-            />
-
-            <br />
-
-            <button type='submit' className='bg-teal hover:bg-dark-teal hover:text-white p-6 text-2xl rounded-2xl font-bold'>Submit</button>
+            <button type='submit' className='bg-teal hover:bg-dark-teal hover:text-white p-6 text-2xl rounded-2xl font-bold my-4 mx-auto'>Submit</button>
         </form>
     )
 }

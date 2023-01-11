@@ -53,7 +53,7 @@ export const Login = () => {
             <Spinner />
           </div>
           :
-          <form className='flex flex-col items-center justify-center h-screen' onSubmit={handleSubmit}>
+          <form className='flex flex-col items-center justify-center h-[80vh]' onSubmit={handleSubmit}>
             <label className='text-white text-2xl m-2'>
               Email:
               <br />
